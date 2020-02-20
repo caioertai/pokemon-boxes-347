@@ -1,0 +1,23 @@
+<div
+  class="banner mb-5"
+  style="
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @box.banner_url %>);
+  ">
+  <div class="container">
+    <h1><%= @box.name %></h1>
+    <p><%= link_to "Add Pokemon", new_box_pokemon_path(@box), class: "btn btn-primary" %></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @box.pokemons.each do |pokemon| %>
+      <div class="col-4">
+        <div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.pokemondb.net/artwork/<%= pokemon.name.downcase %>.jpg)">
+          <%= pokemon.name %>
+          <%= link_to "x", pokemon_path(pokemon), method: :delete, "data-confirm": "Are you sure? He's gonna miss you." %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
