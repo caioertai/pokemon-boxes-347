@@ -1,0 +1,12 @@
+<div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.pokemondb.net/artwork/<%= pokemon.name.downcase %>.jpg)">
+  <%= pokemon.name %>
+
+  <div class="card-tags">
+    <% pokemon.tags.each do |tag| %>
+      <span><%= tag.name %></span>
+    <% end %>
+    <%= link_to "Add tag", new_pokemon_tagging_path(pokemon), class: "new-tag" %>
+  </div>
+
+  <%= link_to "x", pokemon_path(pokemon), method: :delete, "data-confirm": "Are you sure? He's gonna miss you." %>
+</div>

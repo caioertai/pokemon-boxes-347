@@ -27,4 +27,11 @@
   a {
     color: white;
   }
+  a.new-tag {
+    background: white;
+    color: $blue;
+    font-size: .7em;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
 }

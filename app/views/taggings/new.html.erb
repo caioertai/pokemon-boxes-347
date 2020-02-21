@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1>Tagging <%= @pokemon.name %></h1>
+      <%= simple_form_for [@pokemon, @tagging] do |f| %>
+        <%= f.association :tag %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
