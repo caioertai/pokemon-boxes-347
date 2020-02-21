@@ -3,7 +3,13 @@
     <div class="col-4">
       <h1>Tagging <%= @pokemon.name %></h1>
       <%= simple_form_for [@pokemon, @tagging] do |f| %>
+        <!-- This: -->
         <%= f.association :tag %>
+        <!-- Does this: -->
+        <%#= f.association :tag, collection: Tag.all %>
+
+        <!-- So if you want to change the available tags for selection, you -->
+        <!-- Need to update the Tag.all with a different query. -->
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>

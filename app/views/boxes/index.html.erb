@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Pokemon Boxes</h1>
+  <ul>
+    <% @boxes.each do |box| %>
+      <li><%= link_to box.name, box %></li>
+    <% end %>
+  </ul>
+</div>

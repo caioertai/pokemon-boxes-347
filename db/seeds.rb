@@ -1,7 +1,9 @@
 # db/seeds.rb
-Box.destroy_all if Rails.env.development?
-Pokemon.destroy_all if Rails.env.development?
-Tag.destroy_all if Rails.env.development?
+if Rails.env.development?
+  Box.destroy_all
+  Pokemon.destroy_all
+  Tag.destroy_all
+end
 
 first_box = Box.create!(
   name: "My first box",
